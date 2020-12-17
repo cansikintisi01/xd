@@ -21,13 +21,14 @@ exports.run = async (client, message, args) => {
           .setTimestamp()
       );
 
-    const kayit = new Discord.MessageEmbed().setDescription(
-      `**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.kizRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`
-
+    client.channels.cache.get(config.kayitlog).send(
+      new Discord.MessageEmbed()
+        .setDescription(
+          `**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.kizRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`
+        )
         .setColor("RANDOM")
         .setTimestamp()
     );
-    client.channels.cache.get(config.kayitlog).send(kayit);
 
     await piece.roles.add(config.kizRol);
     await piece.roles.remove(config.kayitsiz);
