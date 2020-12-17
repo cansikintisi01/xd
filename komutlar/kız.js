@@ -5,7 +5,7 @@ client = new Discord.Client();
 exports.run = async (client, message, args) => {
 
   try {
-    if (message.channel.id !== (config.kayitlog))
+    if (message.channel.id !== (config.kayitkanal))
       return message.channel.send("");
     if (!message.member.roles.cache.has(config.teyitci))
       return message.reply("Yetkin yok aga b"); 
@@ -21,7 +21,6 @@ exports.run = async (client, message, args) => {
           .setDescription(
             `Bir kullanıcı belirtmelisin. **Örnek: @Piece/424544845290536970**`
           )
-          .setFooter(`Serendia Squad - Kayıt Sistemi`)
           .setColor("RANDOM")
           .setTimestamp()
       );
@@ -32,7 +31,6 @@ exports.run = async (client, message, args) => {
         .setDescription(
           `**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.kizRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`
         )
-        .setFooter(`Serendia Squad - Kayıt Sistemi`)
         .setColor("RANDOM")
         .setTimestamp()
     );
@@ -58,7 +56,7 @@ exports.run = async (client, message, args) => {
   }
 };
 exports.config = {
-  name: "kız",
+  name: "k",
   guildOnly: true,
   aliases: ["k", "kiz"]
 };
