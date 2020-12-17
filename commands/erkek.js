@@ -1,40 +1,55 @@
-const Discord = require('discord.js');
-const config = require('../config.js');
-client = new Discord.Client();
-
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const config = require("../config.json");
+const prefix = config.prefix;
 exports.run = async (client, message, args) => {
+  if (message.channel.id !== "788715224843812864")
+    return message.channel.send("");
+  if (!message.member.roles.has("788715223560355879"))
+    return message.channel.send(
+      "Bu komutu kullanabilmek için <@&788715223560355879> Yetkisine sahip olmalısın"
+    );
+  let user = message.mentions.users.first();
+  let reason = args.slice(1).join("");
+  if (message.mentions.users.size < 1)
+    return message.reply("Lütfen kayıt etmek istediğiniz üyeyi etiketle");
+  if (user.id === message.author.id)
+    return message.reply("Kendinimi kayıt edecen slk? :D");
+  let kimlik =
+    message.guild.member(message.mentions.users.first()) ||
+    message.guild.members.get(args[0]);
 
-    /* variables:
-    piece
-    miaf
-    serendia
-    squad
-    */
-    try {
+  if (!kimlik) return message.reply("**?ETİKET?**");
+  let kayıt = message.guild.member(user);
 
-        if (!message.member.roles.cache.has(config.teyitci)) return message.reply('Yetersiz yetki!'); //eğer yetkisi yoksa dönüt mesajı attırıyoruz.
+  kayıt.addRole("788715223560355873");
+  kayıt.removeRole("788715223363616804");
 
-        const piece = message.mentions.members.first() || message.guild.members.cache.get(args[0]) //üyeyi çekiyoruz yani hem etiket hemde id ile olur.
-        const miaf = args[1] //isim
-        const serendia = args[2] //yaş
+  const ky = message.channel.send();
 
-        if (!piece) return message.channel.send(new Discord.MessageEmbed().setDescription(`Bir kullanıcı belirtmelisin. **Örnek: @Miaf/324886053884264449**`).setFooter(`Serendia Squad - Kayıt Sistemi`).setColor("RANDOM").setTimestamp());
-        if (!miaf) return message.channel.send(new Discord.MessageEmbed().setDescription(`İsim belirtmelisin. **Örnek: Miaf**`).setFooter(`Serendia Squad - Kayıt Sistemi`).setColor("RANDOM").setTimestamp());
-        if (!serendia) return message.channel.send(new Discord.MessageEmbed().setDescription(`Yaş belirtmelisin. **Örnek: 17**`).setFooter(`Serendia Squad - Kayıt Sistemi`).setColor("RANDOM").setTimestamp());
-
-        message.channel.send(new Discord.MessageEmbed().setDescription(`**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.erkekRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`).setFooter(`Serendia Squad - Kayıt Sistemi`).setColor("RANDOM").setTimestamp())
-        piece.setNickname(`${miaf} | ${serendia}`).catch(e => message.channel.send(`Benden Üstte Olduğu İçin İsmini Değiştiremedim.`))
-        await piece.roles.add(config.erkekRol) //eğer başka rolleriniz de varsa onları da ek olarak congif.json da belirtip alt satıra kopyalayıp yapın.
-        await piece.roles.remove(config.kayitsiz)
-        message.guild.channels.cache.get(config.genelChat).send(`${piece} aramıza katıldı :tada: Sunucumuz şuanda **${message.guild.memberCount}** kişi!`)
-
-    } catch (e) {
-        message.channel.send(`Kayıt Yetkim veya Rolüm Yok`)
-    }
-
+  const kayit = new Discord.RichEmbed()
+    .setColor(0x00ae86)
+    .setTimestamp()
+    .addField("Eylem:", "Kayıt")
+    .addField("Kullanıcı:", `${user}(${user.id})`)
+    .addField("Cinsiyet:", `ÇOCUK ADAM`)
+    .addField(
+      "Yetkili:",
+      `${message.author.username}#${message.author.discriminator}`
+    );
+  client.channels.get("788715224550735930").send(kayit);
 };
-exports.config = {
-  name: "erkek",
-  guildOnly: true,
-  aliases: ["e"],
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["erkek", "e"],
+  permLevel: 0
 };
+
+exports.help = {
+  name: "e",
+  description: "erkek ",
+  usage: "erkek"
+};
+
