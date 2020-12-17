@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
       return message.channel.send(
         new Discord.MessageEmbed()
           .setDescription(
-            `Bir kullanıcı belirtmelisin. **Örnek: @Piece/424544845290536970**`
+            `Bir kullanıcı belirtmelisin. **Örnek: @anan61**`
           )
           .setColor("RANDOM")
           .setTimestamp()
@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
     message.channel.send(
       new Discord.MessageEmbed()
         .setDescription(
-          `**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.kizRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`
+          `**__Kayıt İşlemi Başarılı__**\n\n🤠 Kayıt Edilen Kişi: ${piece}\n🤠 Kayıt Yapan Yetkili: ${message.author}\n🤠 Kayıt İşleminde Verilen Rol: <@&${config.erkekRol}>\n🤠 Kayıt İşleminde Alınan Rol: <@&${config.kayitsiz}>`
         )
         .setColor("RANDOM")
         .setTimestamp()
