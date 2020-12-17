@@ -4,7 +4,7 @@ const config = require("./config.js")
 const moment = require('moment')
 require("moment-duration-format")
   moment.locale("tr")
-const fs = require("fs");                                        // serendia squad ❤ Piece ❤ Miaf 
+const fs = require("fs");                                       
 require('./util/Loader.js')(client);
 
 client.commands = new Discord.Collection();
@@ -15,12 +15,12 @@ fs.readdir('./commands/', (err, files) => {
   files.forEach(f => {
     let props = require(`./commands/${f}`);
     console.log(`${props.config.name} komutu yüklendi.`);
-    console.log(`Bu altyapı Serendia Squad sunucusunda sizler için paylaşıldı.`)
+    console.log(`aga b`)
     client.commands.set(props.config.name, props);
     props.config.aliases.forEach(alias => {
       client.aliases.set(alias, props.config.name);
     });
-  });                                                                     // serendia squad ❤ Piece ❤ Miaf 
+  });                                                                   
 });
 
 client.on('guildMemberAdd', async miaf => {
@@ -40,6 +40,6 @@ client.on('guildMemberAdd', async miaf => {
   `)
 });
 
-// Piece&Miaf sevgilerle.
+// Piece&Miaf sevgilerle. admsın bebeğim 
 
 client.login(config.token)

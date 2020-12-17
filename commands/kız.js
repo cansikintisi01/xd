@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
 
 };
 exports.config = {
-  name: "kız",
+  name: "fuckyoubitchsdfsdfsdfsfdsQWERTYU345678654",
   guildOnly: true,
   aliases: ["k", "kiz"],
 };
