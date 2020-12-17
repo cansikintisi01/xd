@@ -7,16 +7,16 @@ require("moment-duration-format")
 const fs = require("fs");                                       
 require('./util/Loader.js')(client);
 
-client.commands = new Discord.Collection();
+client.komutlar = new Discord.Collection();
 client.aliases = new Discord.Collection();
-fs.readdir('./commands/', (err, files) => {
+fs.readdir('./komutlar/', (err, files) => {
   if (err) console.error(err);
   console.log(`${files.length} komut yüklenecek.`);
   files.forEach(f => {
-    let props = require(`./commands/${f}`);
+    let props = require(`./komutlar/${f}`);
     console.log(`${props.config.name} komutu yüklendi.`);
     console.log(`aga b`)
-    client.commands.set(props.config.name, props);
+    client.komutlar.set(props.config.name, props);
     props.config.aliases.forEach(alias => {
       client.aliases.set(alias, props.config.name);
     });
@@ -40,6 +40,5 @@ client.on('guildMemberAdd', async miaf => {
   `)
 });
 
-// Piece&Miaf sevgilerle. admsın bebeğim 
 
 client.login(config.token)

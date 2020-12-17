@@ -2,12 +2,12 @@
   "name": "v12-kayit-altyapi",
   "version": "0.0.1",
   "description": "v12-kayit-altyapi",
-  "main": "main.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.5.0",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2"
   },
