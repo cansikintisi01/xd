@@ -1,15 +1,16 @@
 module.exports = {
-  "token": "Nzg4NzI5OTc2Mzc1NDc2Mjg0.X9nwCA.LI0eCBsBI8_A4_bahVTEhQj2d-I",
-  "geliştiriciler": ["494202702813724703"], 
-  "prefix": "!",
+  "token": "token",
+  "geliştiriciler": ["geliştiriciid"], 
+  "prefix": "prefix",
 
- "sunucuid": "788715223363616799",
- "kayitkanal": "788715224843812864",
- "genelChat": "788715223648305165",
+ "sunucuid": "sunucuid",
+ "kayitkanal": "kayıtkanal",
+ "genelChat": "genelchat",
 
- "kizRol": "788715223560355874",
- "erkekRol": "788715223560355873",
- "kayitsiz": "788715223363616804",
- "teyitci": "788715223560355879",
- "kayitlog": "788715224550735930"
+ "kizRol": "kızrol",
+ "erkekRol": "erkekrol",
+ "kayitsiz": "kayıtsızrol",
+ "teyitci": "yetkilirol",
+ "kayitlog": "kayıtlog"
 };
+//hepsine id ile yapın xd

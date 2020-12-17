@@ -1,7 +1,7 @@
 {
-  "name": "v12-kayit-altyapi",
+  "name": "güncellenmiş altyapı",
   "version": "0.0.1",
-  "description": "v12-kayit-altyapi",
+  "description": "düzenlenmiş altyapı",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"

@@ -3,17 +3,15 @@ const config = require("../config.js");
 client = new Discord.Client();
 
 exports.run = async (client, message, args) => {
-
   try {
-    if (message.channel.id !== (config.kayitkanal))
+    if (message.channel.id !== config.kayitkanal)
       return message.channel.send("");
     if (!message.member.roles.cache.has(config.teyitci))
-      return message.reply("Yetkin yok aga b"); 
+      return message.reply("Yetkin yok aga b");
 
     const piece =
       message.mentions.members.first() ||
-      message.guild.members.cache.get(args[0]); //üyeyi çekiyoruz yani hem etiket hemde id ile olur.
- 
+      message.guild.members.cache.get(args[0]); 
 
     if (!piece)
       return message.channel.send(
@@ -25,7 +23,6 @@ exports.run = async (client, message, args) => {
           .setTimestamp()
       );
 
-
     message.channel.send(
       new Discord.MessageEmbed()
         .setDescription(
@@ -34,14 +31,12 @@ exports.run = async (client, message, args) => {
         .setColor("RANDOM")
         .setTimestamp()
     );
-    
-  
-    await piece.roles.add(config.erkekRol); //eğer başka rolleriniz de varsa onları da ek olarak congif.json da belirtip alt satıra kopyalayıp yapın.
+
+    await piece.roles.add(config.erkekRol);
     await piece.roles.remove(config.kayitsiz);
-    message.guild.channels.cache
-      .get(config.kayitlog)
-      
-        const kayit = new Discord.RichEmbed()
+    message.guild.channels.cache.get(config.kayitlog);
+
+    const kayit = new Discord.RichEmbed()
       .setColor(0x00ae86)
       .setTimestamp()
       .addField("Eylem:", "Kayıt")
