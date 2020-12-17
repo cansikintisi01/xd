@@ -4,7 +4,7 @@ const config = require("../config.js");
 exports.run = async (client, message, args) => {
 
   try {
-    if (message.channel.id !== "788715224843812864")
+    if (message.channel.id !== "config.kayitlog")
       return message.channel.send("");
     if (!message.member.roles.cache.has("788715223560355879"))
       return message.channel.send(
