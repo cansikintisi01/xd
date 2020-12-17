@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
       );
     client.channels.cache.get("788715224550735930").send(kayit);
   } catch (e) {
-    message.channel.send(`HATA 1`);
+    
   }
 };
 exports.config = {
