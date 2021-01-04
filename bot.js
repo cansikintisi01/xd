@@ -26,10 +26,11 @@ fs.readdir("./komutlar/", (err, files) => {
 client.on("guildMemberAdd", async miaf => {
   const serendia = config.sunucuid;
 
-  const piece = config.kayitKanal;
+  const piece = config.kayitkanal;
 
-  client.guilds.cache.get(serendia).channels.cache.get(piece).send(`
-  
+  client.guilds.cache
+    .get("788715223363616799")
+    .channels.cache.get("788715224843812864").send(`
   • ${miaf} sunucumuza hoş geldin. Seninle beraber **${
     miaf.guild.memberCount
   }** kişiye ulaştık :tada: 
@@ -40,10 +41,20 @@ client.on("guildMemberAdd", async miaf => {
 
   • Sesli odalara girerek kaydınızı yaptırabilirsiniz. <@&${
     config.teyitci
-  }> sizinle ilgilenecektir.
+  }> sizinle ilgilenecektir.`);
+});
 
-  `);
+//gelen-giden msj çalışmayabilir..
+
+client.on("message", async message => {
+  if (message.content === "sa") {
+    try {
+      await message.react("🇦");
+      await message.react("🇸");
+    } catch (error) {
+      console.error("One of the emojis failed to react.");
+    }
+  }
 });
 
 client.login(config.token);
-//gelen-giden msj çalışmayabilir..
