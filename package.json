@@ -2,9 +2,9 @@
   "name": "güncellenmiş altyapı",
   "version": "0.0.1",
   "description": "düzenlenmiş altyapı",
-  "main": "bot.js",
+  "main": "carbonibon.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node carbonibon.js"
   },
   "dependencies": {
     "discord.js": "^12.5.1",
