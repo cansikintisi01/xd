@@ -63,8 +63,8 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberAdd", async miaf => {
   client.guilds.cache
-    .get("config.sunucuid")
-    .channels.cache.get("config.kayitkanal")
+    .get("sunucu idsini girin")
+    .channels.cache.get("kayıt kanal idsini girin")
     .send(`@here`)
     .catch(message => message.delete(1));
 });
