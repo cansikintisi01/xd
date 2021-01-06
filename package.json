@@ -13,7 +13,7 @@
     "express": "^4.17.1"
   },
   "engines": {
-    "node": "13.x"
+    "node": "12.x"
   },
   "license": "MIT",
   "keywords": [
