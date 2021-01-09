@@ -47,7 +47,7 @@ client.on("guildMemberAdd", member => {
 
   const joinembed = new Discord.MessageEmbed()
     .setDescription(
-      `**__Öncelikle Carbonistan Sunucumuza Hoş Geldin!__** \n \n **• ${member} ${yazıxd} \n • Seninle Birlikte** **Üye sayımız:** \`${
+      `**__Öncelikle ${message.guild.name} Sunucumuza Hoş Geldin!__** \n \n **• ${member} ${yazıxd} \n • Seninle Birlikte** **Üye sayımız:** \`${
         member.guild.memberCount
       }\`**kişi daha oldu!** \n • **<@&${
         config.teyitci
