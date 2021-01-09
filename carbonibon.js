@@ -61,10 +61,14 @@ client.on("guildMemberAdd", member => {
   channel.send(joinembed);
 });
 
+client.on("guildMemberAdd", member => {
+  member.roles.add(config.kayitsiz);
+});
+
 client.on("guildMemberAdd", async miaf => {
   client.guilds.cache
-    .get("sunucu idsini girin")
-    .channels.cache.get("kayıt kanal idsini girin")
+    .get("sunucu idniz")
+    .channels.cache.get("kayıt kanal idniz")
     .send(`@here`)
     .catch(message => message.delete(1));
 });
@@ -73,7 +77,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
-    console.log(` az önce pinglenmedi. Sonra ponglanmadı... ya da başka bir şeyler olmadı.`);
+    console.log(`<31`);
     response.sendStatus(200);
     });
     app.listen(process.env.PORT);
