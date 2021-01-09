@@ -11,6 +11,9 @@ module.exports = {
  "erkekRol": "erkekrol",
  "kayitsiz": "kayıtsızrol",
  "teyitci": "yetkilirol",
- "kayitlog": "kayıtlog"
+ "kayitlog": "kayıtlog",
+ "boostrol": "boostrolid",
+ "tag": "tagınızı yazın"
+  
 };
 //hepsine id ile yapın xd
