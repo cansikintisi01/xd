@@ -1,7 +1,7 @@
 {
-  "name": "güncellenmiş altyapı",
+  "name": "updated discord bot infrastructure",
   "version": "0.0.1",
-  "description": "düzenlenmiş altyapı",
+  "description": "updated discord bot infrastructure",
   "main": "carbonibon.js",
   "scripts": {
     "start": "node carbonibon.js"
